@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NewBlog!!!</title>
+</head>
+<body>
+    <h1>@ViewBag.NewTitle</h1> 
+    <h2>@ViewBag.NewContent</h2> 
+    <h3>Posted: @ViewBag.CreatedAt</h3>
+    <h2>Here are some things!</h2>
+    @foreach(var thing in ViewBag.Things)
+    {
+        <p>@thing</p>
+    }
+    <hr>
+    <h4>HELLO FROM ViewData ...</h4>
+    <h1>@ViewData["NewTitle"]</h1> 
+    <h2>@ViewData["NewContent"]</h2> 
+    <h2>Posted: @ViewData["CreatedAt"]</h2> 
+</body>
+</html>
