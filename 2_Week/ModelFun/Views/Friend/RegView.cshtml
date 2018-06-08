@@ -1,0 +1,26 @@
+@model Friend
+<h1>Hello @Model, sign up now!</h1>
+
+<form asp-action="Create" asp-controller="Home" method="POST">
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre">
+    </div>
+    <div class="form-group">
+        <label asp-for="NumHands"></label>
+        <input asp-for="NumHands">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Age"></span>
+        <label asp-for="Age"></label>
+        <input asp-for="Age">
+    </div>
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title">
+    </div>
+    <button>SEND IT</button>
+</form>
+<span asp-validation-for="NumHands"></span>
+<span asp-validation-for="Nombre"></span>
+<span asp-validation-for="Title"></span>
