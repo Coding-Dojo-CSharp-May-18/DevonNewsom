@@ -1,0 +1,10 @@
+@model LogregViewModel
+<h1>@TempData["message"]</h1>
+
+@Html.Partial("Login")
+@Html.Partial("Register")
+
+@foreach(var message in ViewBag.Messages)
+{
+    
+}

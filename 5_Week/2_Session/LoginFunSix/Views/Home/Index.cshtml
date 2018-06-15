@@ -1,0 +1,40 @@
+@model LogregViewModel
+<h1>Login!</h1>
+<h1>@TempData["message"]</h1>
+<form asp-action="Login" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span asp-validation-for="Login.Username"></span>
+        <label asp-for="Login.Username"></label>
+        <input asp-for="Login.Username">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Login.Password"></span>
+        <label asp-for="Login.Password"></label>
+        <input asp-for="Login.Password">
+    </div>
+    <button>Login.</button>
+</form>
+<h1>Register!</h1>
+<form asp-action="Registration" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span asp-validation-for="Registration.Name"></span>
+        <label asp-for="Registration.Name"></label>
+        <input asp-for="Registration.Name">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Registration.Username"></span>
+        <label asp-for="Registration.Username"></label>
+        <input asp-for="Registration.Username">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Registration.Password"></span>
+        <label asp-for="Registration.Password"></label>
+        <input asp-for="Registration.Password">
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="Registration.Confirm"></span>
+        <label asp-for="Registration.Confirm"></label>
+        <input asp-for="Registration.Confirm">
+    </div>
+    <button>Register.</button>
+</form>

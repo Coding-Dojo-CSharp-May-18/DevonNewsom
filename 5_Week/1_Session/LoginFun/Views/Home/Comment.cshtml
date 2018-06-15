@@ -1,0 +1,5 @@
+@model Comment
+<h2>Post a Comment</h2>
+<form asp-action="Create" asp-controller="Comment">
+    <input type="hidden" asp-for="MessageId" value="">
+</form>
