@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model LogReg
+<h1>Login or Register to QUOTES DOT COM</h1>
+<h2>Login</h2>
+<form asp-action="Register" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span asp-validation-for="RegUser.Name"></span>
+        <label asp-for="RegUser.Name"></label>
+        <input asp-for="RegUser.Name"/>
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="RegUser.Username"></span>
+        <label asp-for="RegUser.Username"></label>
+        <input asp-for="RegUser.Username"/>
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="RegUser.Password"></span>
+        <label asp-for="RegUser.Password"></label>
+        <input asp-for="RegUser.Password"/>
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="RegUser.Confirm"></span>
+        <label asp-for="RegUser.Confirm"></label>
+        <input asp-for="RegUser.Confirm"/>
+    </div>
+    <button>Register</button>
+</form>
+<form asp-action="Login" asp-controller="Home" method="post">
+    <div class="form-group">
+        <span asp-validation-for="LogUser.Username"></span>
+        <label asp-for="LogUser.Username"></label>
+        <input asp-for="LogUser.Username"/>
+    </div>
+    <div class="form-group">
+        <span asp-validation-for="LogUser.Password"></span>
+        <label asp-for="LogUser.Password"></label>
+        <input asp-for="LogUser.Password"/>
+    </div>
+    <button>Login</button>
+</form>
