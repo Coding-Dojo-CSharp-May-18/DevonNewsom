@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Quote>
+<h1>Some food for thought DOT COM</h1>
+<h2>Our 5 most recent quotes!</h2>
+@foreach(var q in Model)
+{
+    <div class="quote">
+        <h2>"@q.Content" - @q.Byline (@q.CreatedAt)</h2>
+    </div>
+}
