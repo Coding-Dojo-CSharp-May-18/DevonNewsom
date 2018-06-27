@@ -23,6 +23,29 @@ namespace MoreEFunizes.Controllers
           
             return View();
         }
+        [HttpPost("login")]
+        public IActionResult Login(LogReg model)
+        {
+            QuoteUser user = model.LogUser;
+            QuoteUser queriedUser = _dbContext.Users.SingleOrDefault(u => u.Username == user.Username);
+            if(queriedUser == null)
+            {
+                ModelState.AddModelError("Username", "Invalid Username/Password");
+                return View("Index");
+            }
+            if(ModelState.IsValid)
+            {
+                PasswordHasher<QuoteUser> hasher = new PasswordHasher<QuoteUser>();
+                if(hasher.VerifyHashedPassword(user, queriedUser.Password, user.Password)
+                    == PasswordVerificationResult.Failed)
+                {
+                    ModelState.AddModelError("Username", "Invalid Username/Password");
+                    return View("Index");
+                }
+            }
+            HttpContext.Session.SetInt32("id", queriedUser.UserId);
+            return RedirectToAction("Index", "Quotes");
+        }
         // Create a new quotes
         [HttpPost("create")]
         public IActionResult Register(LogReg model)
