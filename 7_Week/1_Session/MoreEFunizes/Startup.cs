@@ -27,7 +27,7 @@ namespace MoreEFunizes
         public void ConfigureServices(IServiceCollection services)
         {
             // ok , i need to add my dbcontext service!
-            services.AddDbContext<QuoteContext>(option => option.UseMySQL(Configuration["DBInfo:ConnectionString"]));
+            services.AddDbContext<QuoteContext>(option => option.UseMySQL(Configuration["DBInfo::ConnectionString"]));
             services.AddSession();
             services.AddMvc();
         }
@@ -35,15 +35,9 @@ namespace MoreEFunizes
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
-
+            app.UseDeveloperExceptionPage();
+           
+           
             app.UseStaticFiles();
             app.UseSession();
             app.UseMvc();

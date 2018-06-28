@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MoreEFunizes.Models
@@ -10,7 +12,12 @@ namespace MoreEFunizes.Models
         public string Username {get;set;}
         [DataType(DataType.Password)]
         public string Password {get;set;}
-        public System.DateTime CreatedAt {get;set;}
+        public DateTime CreatedAt {get;set;}
+        public IEnumerable<Quote> SelectedQuotes {get;set;}
+        public QuoteUser()
+        {
+            CreatedAt = DateTime.Now;
+        }
     }
     public class RegisterUser : QuoteUser
     {

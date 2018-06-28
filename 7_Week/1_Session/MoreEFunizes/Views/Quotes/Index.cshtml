@@ -1,12 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model List<Quote>
+@model QuoteDash
 <h1>Some food for thought DOT COM</h1>
+<h2>Let's ear it for @Model.TopUser.Name for being QUOTE KING!</h2>
 <h2>Our 5 most recent quotes!</h2>
-@foreach(var q in Model)
+@foreach(var q in Model.RecentQuotes)
 {
     <div class="quote">
         <h2>"@q.Content" - @q.Byline (@q.CreatedAt)</h2>
+        <p>Left behind by @q.Creator.Name</p>
     </div>
 }
